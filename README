@@ -1,1 +1,3 @@
 Base code for a Google Chrome extension to provide notifications for unread messages on Messenger.com
+
+To install the extension, download the .crx file, open chrome://extensions in a new tab, tick "Developer mode", and drag in the .crx file from your Downloads folder. 
