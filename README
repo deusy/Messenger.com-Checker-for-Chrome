@@ -1,3 +1,8 @@
-Base code for a Google Chrome extension to provide notifications for unread messages on Messenger.com
+A Google Chrome extension to provide notifications for unread messages on Messenger.com
+
+Based on the Chrome extension Facebook Messenger Notifications by daPhyre.
+
+This is only intended as a quick-fix until daPhyre updates Facebook Messenger Notifications.
 
 To install the extension, download the .crx file, open chrome://extensions in a new tab, tick "Developer mode", and drag in the .crx file from your Downloads folder. 
+
