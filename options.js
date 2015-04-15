@@ -1,13 +1,7 @@
 function $(id){return document.getElementById(id);}
 function enableSave(){$('saveButton').disabled=false;}
 function disableSave(){$('saveButton').disabled=true;}
-<<<<<<< HEAD
 window.onload=function(){
-	$('pathNew').addEventListener('input',enableSave);
-	$('pathZero').addEventListener('input',enableSave);
-	//$('useHttps').addEventListener('click',enableSave);
-	$('alwaysNew').addEventListener('click',enableSave);
-	$('showZero').addEventListener('click',enableSave);
 	$('playSound').addEventListener('click',enableSave);
 	$('showNoti').addEventListener('click',enableSave);
 	$('timeNoti').addEventListener('click',enableSave);
@@ -17,16 +11,8 @@ window.onload=function(){
 	$('useBg').addEventListener('click',setUseBg);
 	init();
 }
-=======
-window.onload=init;
->>>>>>> 3fdda02da19b7cc684cee20092de2585ccb87ac2
 
 function init(){
-	$('pathNew').value=(localStorage.pathNew||localStorage.pathNew=='')?localStorage.pathNew:'notifications';
-	$('pathZero').value=(localStorage.pathZero||localStorage.pathZero=='')?localStorage.pathZero:'';
-	//$('useHttps').checked=(localStorage.useHttps)?(localStorage.useHttps == 'yes'):false;
-	$('alwaysNew').checked=(localStorage.alwaysNew)?(localStorage.alwaysNew == 'yes'):false;
-	$('showZero').checked=(localStorage.showZero)?(localStorage.showZero == 'yes'):false;
 	$('playSound').checked=(localStorage.playSound)?(localStorage.playSound == 'yes'):true;
 	$('showNoti').checked=(localStorage.showNoti)?(localStorage.showNoti == 'yes'):true;
 	$('timeNoti').value=(parseInt(localStorage.timeNoti)>=0)?parseInt(localStorage.timeNoti)/1000+'':'20';
@@ -38,15 +24,9 @@ function init(){
 }
 
 function save(){
-	localStorage.pathNew=$('pathNew').value;
-	localStorage.pathZero=$('pathZero').value;
-	
-	//localStorage.useHttps=$('useHttps').checked?'yes':'no';
-	localStorage.alwaysNew=$('alwaysNew').checked?'yes':'no';
-	localStorage.showZero=$('showZero').checked?'yes':'no';
 	localStorage.playSound=$('playSound').checked?'yes':'no';
 	localStorage.showNoti=$('showNoti').checked?'yes':'no';
-	
+
 	localStorage.timeNoti=(!isNaN($('timeNoti').value)&&parseInt($('timeNoti').value)>=0)?parseInt($('timeNoti').value*1000):20000;
 	localStorage.refreshInterval=(!isNaN($('refreshInterval').value)&&parseInt($('refreshInterval').value)>0)?parseInt($('refreshInterval').value*60000):300000;
 
@@ -54,7 +34,6 @@ function save(){
 	chrome.extension.getBackgroundPage().init();
 }
 
-<<<<<<< HEAD
 function clear(){
 	if(confirm('Restore all data to default?\nThis can\'t be undone...')){
 		localStorage.clear();
@@ -62,8 +41,6 @@ function clear(){
 	}
 }
 
-=======
->>>>>>> 3fdda02da19b7cc684cee20092de2585ccb87ac2
 function setUseBg(){
 	if($('useBg').checked)
 		chrome.permissions.request({permissions:['background']});
